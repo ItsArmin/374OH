@@ -1,6 +1,23 @@
-<div class="col-md-4 col-md-offset-4">
-	<div class="jumbotron">
+<div class="col-md-6 col-md-offset-3" style="padding-top:20px;" ng-controller="questionController">
+
+	<div class="jumbotron" style="padding-left: 10px;">
 		<h1>374 Questions</h1>
 		<p>You can ask your 374 questions for office hours here</p>
+		<a href="/questions" class="btn btn-primary">View Submitted Questions</a>
+		note: if you already see the question you wanted to ask, just upvote
 	</div>
+
+	<h2>Ask your question:</h2>
+	<form class="form-horizontal">
+		<fieldset>
+			<div class="form-group">
+				<textarea class="form-control" rows="3" id="textArea" style="margin-top: 0px; margin-bottom: 0px; height: 117px;" ng-model="q.text"></textarea>
+			</div>
+			<div class="form-group">
+				<h3>Check submitted questions first!</h3>
+				<button type="submit" class="btn btn-primary" ng-click="postQuestion(q)">Submit Question</button>
+			</div>
+		</fieldset>
+	</form>
+
 </div>

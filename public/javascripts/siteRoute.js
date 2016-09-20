@@ -5,6 +5,9 @@ var app = angular.module('374OH',['ngRoute']);
 		.when('/',{
 				templateUrl:'/partials/home.html'
 			})
+		.when('/questions',{
+				templateUrl:'/partials/questions.html'
+			})
 		.otherwise({
 				template:"No page here..."
 			});
@@ -18,6 +21,9 @@ var app = angular.module('374OH',['ngRoute']);
 
 	});
 
+	// app.controller('questionController',function($scope){
+	// 	$scope.message = "hello"
+	// });	
 //--------------------------------------------------------------------
 
 	//	application directives

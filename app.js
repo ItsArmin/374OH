@@ -4,10 +4,16 @@ var express = require("express");
 var app = express();
 
 
-
+//	load static files
 app.use('/javascripts',express.static(__dirname + '/public/javascripts'));
 app.use('/partials',express.static(__dirname + '/public/partials'));
 app.use('/css',express.static(__dirname + '/public/css'));
+
+
+//	load up the api
+var questionApi = require(__dirname + /api/questions.js);
+//	use api in app
+app.use('/api',questionApi);
 
 
 //	Custom View engine with angular routing
