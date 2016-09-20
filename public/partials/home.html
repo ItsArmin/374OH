@@ -1,17 +1,22 @@
 <div class="col-md-6 col-md-offset-3" style="padding-top:20px;" ng-controller="questionController">
 
-	<div class="jumbotron" style="padding-left: 10px;">
+	<div class="jumbotron" style="background-image: img/headers.jpg;">
+		<!-- <img src="img/header.jpg"></img> -->
 		<h1>374 Questions</h1>
 		<p>You can ask your 374 questions for office hours here</p>
-		<a href="/questions" class="btn btn-primary">View Submitted Questions</a>
-		note: if you already see the question you wanted to ask, just upvote
+		If you already see the question you wanted to ask, just upvote
 	</div>
 
 	<h2>Ask your question:</h2>
 	<form class="form-horizontal">
 		<fieldset>
 			<div class="form-group">
-				<textarea class="form-control" rows="3" id="textArea" style="margin-top: 0px; margin-bottom: 0px; height: 117px;" ng-model="q.text"></textarea>
+				<h5>Topic here</h5>
+				<input type="text" class="form-control" id="inputEmail" ng-model="q.topic"></input>
+			</div>
+			<div class="form-group">
+				<h5>Question</h5>
+				<textarea class="form-control" rows="3" id="textArea" style="margin-top: 0px; margin-bottom: 0px; height: 117px;" ng-model="q.question"></textarea>
 			</div>
 			<div class="form-group">
 				<h3>Check submitted questions first!</h3>
@@ -21,3 +26,17 @@
 	</form>
 
 </div>
+
+	<div class="col-md-8 col-md-offset-2" style="padding-top:20px;">
+		<div class"list-group">
+			<li class="list-group-item active">
+	    		Questions
+	  		</li>
+	  		<li class="list-group-item">
+	  			
+	  			<a href="#" ng-click="upvote(q)"><span class="glyphicon glyphicon-chevron-up fa-2x" ></span></a>
+	  			<a href="#" ng-click="downvote(q)"><span class="glyphicon glyphicon-chevron-down fa-2x" ></span></a>
+	  			Rank
+  			</li>
+		</div>
+	</div>

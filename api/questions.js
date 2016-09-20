@@ -3,19 +3,37 @@ var router = express.Router();
 
 
 //	load question schema
-var question = require('../models/questionModel.js');
+var questionMod = require('../models/questionModel.js');
 
+router.get('/loadQuestions', function(req,res){
+	questionMod.find({}).sort({rank: -1}).exec(function(err, results){
+		if(results != NULL){
+			res.send(req.body);
+		}
+		else{
+			res.send(results);
+		}
+	});
+});
 
+router.post('/upVoteQuestion', function(req,res){
+
+});
+
+router.post('/downVoteQuestion', function(req,res){
+	
+});
 
 router.post('/askQuestion', function(req,res){
-	var inQuestion = req.body;
+	var q = req.body;
 	//	create new question object and put in the db
-	var saveQuestion = new question{
-			question : inQuestion.question,
-			rank	 : inQuestion.rank,
+	var saveQuestion = new questionMod({
+			topic	 : q.topic,
+			question : q.question,
+			rank	 : 0,
 			date	 : Date(),
-			status	 : inQuestion.answered
-	}
+			status	 : false
+	});
 	saveQuestion.save();
 	res.send(saveQuestion);
 

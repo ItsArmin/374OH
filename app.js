@@ -8,10 +8,11 @@ var app = express();
 app.use('/javascripts',express.static(__dirname + '/public/javascripts'));
 app.use('/partials',express.static(__dirname + '/public/partials'));
 app.use('/css',express.static(__dirname + '/public/css'));
+app.use('/img', express.static(__dirname + '/public/images'));
 
 
 //	load up the api
-var questionApi = require(__dirname + /api/questions.js);
+var questionApi = require(__dirname + '/api/questions.js');
 //	use api in app
 app.use('/api',questionApi);
 

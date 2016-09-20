@@ -5,9 +5,9 @@ var app = angular.module('374OH',['ngRoute']);
 		.when('/',{
 				templateUrl:'/partials/home.html'
 			})
-		.when('/questions',{
-				templateUrl:'/partials/questions.html'
-			})
+		// .when('/questions',{
+		// 		templateUrl:'/partials/questions.html'
+		// 	})
 		.otherwise({
 				template:"No page here..."
 			});
